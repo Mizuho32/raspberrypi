@@ -4,3 +4,6 @@ highlight/
 img/
 .*.swp
 .*.swo
+*.html
+.config
+tags
