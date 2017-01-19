@@ -1,23 +1,11 @@
+raspberry piとARMプロセッサについてはトップレベルのREADMEを参照。プログラムのロードと実行方法も同じく。
 
-See the top level README for information on where to find documentation
-for the raspberry pi and the ARM processor inside.  Also find information
-on how to load and run these programs.
+これら例は古いpi1ボード、A, B, B rev2用。A+やB+は他のディレクトリ参照。
 
-These examples are for the older pi1 boards, the A, the B, the B rev 2.
-But not the A+ nor B+ there are other directories for that.
+raspberry piはどれも似通ってはいるが、しかし管理のためにボードごとにグループすることにした。
 
-The raspberry pi family is more similar than different, but I have
-decided it is easier to manage by grouping the examples by board type.
+おすすめはbootloader07のkernel.imgを使ってftdiのUSB-シリアル変換経由で例を走らせることが。RUNピンにモーメンタリのボタンをハンダ付けもしてる。これはボードリセットだ。ハンダ付けせずにする方法もある。
 
-My preferred way to run examples is to use my bootloader07 kernel.img on
-the board with an ftdi usb to uart board or cable.  I also solder a
-momentary pushbutton on the RUN pins, which is basically a board reset.
-There are ways to do this without soldering, pins you can push in rather
-than solder.
+bootloader07と一緒にSDがセットされたら、リセットして、Intel hex形式のプログラムをダウンロードしよう。'g'を押せば実行。必要なら繰り返す。
 
-Once the sd card is in with bootloader07, press reset, download the
-intel hex (.hex) version of the program I want to run. Press 'g' to go.
-Repeat as necessary.
-
-Or you can copy the blinker01.bin file to the kernel.img file on your
-sd card, replace the sd card and turn the power on.
+あるいはblinker01.binをkernel.imgとしてコピーし、SDを入れ替えて電源をいれる。
