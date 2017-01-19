@@ -1,19 +1,16 @@
 
-See the top level README for information on where to find documentation
-for the raspberry pi and the ARM processor inside.  Also find information
-on how to load and run these programs.
+raspberry piとARMプロセッサについてはトップレベルのREADMEを参照。プログラムのロードと実行方法も同じく。
 
-These examples are for the pi3, see other directories for other
-flavors of raspberry pi.
+これら例はpi3用である。　他のraspberry piについては他のディレクトリ参照。raspberry piはどれも似通ってはいるが、しかし管理のためにボードごとにグループすることにした。
 
-This directory is for aarch32 mode (dont use a config.txt) and switches
-from HYP back to SVC mode.
+このディレクトリはaarch32モード用である。(config.txtを使わない)そしてHYPからSVCモードに戻る。
 
-The bootloader is one level up and shared for both SVC and HYP as I
-want the applications loaded to make the changes not the bootloader.
+ブートローダーは一レベル上で、SVCとHYPの両方で共有されている。アプリケーションを読み込みたいので。
 
-For now this seems to work switching back to SVC and to secure mode
+SVCとセキュアモードに戻ることで、これは動くだろう。
 
+[source, asm]
+----
 .globl _start
 _start:
     ldr pc,reset_handler
@@ -79,4 +76,4 @@ smc:
     bic r1, r1, #1
     mcr p15, 0, r1, c1, c1, 0
     movs    pc, lr
-
+----
