@@ -1,10 +1,7 @@
 
-See the top level README for information on where to find documentation
-for the raspberry pi and the ARM processor inside.  Also find information
-on how to load and run these programs.
+raspberry piとARMプロセッサについてはトップレベルのREADMEを参照。プログラムのロードと実行方法も同じく。
 
-This example is for the older pi1 boards, see other directories for
-other flavors of raspberry pi.
+この例は古いpi1ボード用。他のraspberry piについては他のディレクトリ参照。
 
 There is a free-running 64 bit timer, super easy to use, just read it.
 
